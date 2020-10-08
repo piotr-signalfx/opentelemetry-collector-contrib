@@ -1,0 +1,24 @@
+receivers:
+  sap:
+  sap/all_settings:
+    url: "http://www.sap.com"
+    collection_interval: 30s
+  sap/partial_settings:
+    collection_interval: 30s
+
+
+processors:
+  exampleprocessor:
+
+exporters:
+  exampleexporter:
+
+service:
+  pipelines:
+    metrics:
+      receivers:
+        - sap
+        - sap/all_settings
+        - sap/partial_settings
+      processors: [exampleprocessor]
+      exporters: [exampleexporter]

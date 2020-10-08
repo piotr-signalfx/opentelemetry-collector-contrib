@@ -52,6 +52,7 @@ import (
 	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/receivercreator"
 	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/redisreceiver"
 	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/sapmreceiver"
+	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/sapreceiver"
 	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/signalfxreceiver"
 	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/simpleprometheusreceiver"
 	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/splunkhecreceiver"
@@ -83,6 +84,7 @@ func components() (component.Factories, error) {
 
 	receivers := []component.ReceiverFactory{
 		collectdreceiver.NewFactory(),
+		sapreceiver.NewFactory(),
 		sapmreceiver.NewFactory(),
 		signalfxreceiver.NewFactory(),
 		carbonreceiver.NewFactory(),
